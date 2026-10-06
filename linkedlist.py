@@ -16,10 +16,12 @@ class LinkedList:
                 temp=temp.next
             temp.next=new_node #appending new node
     def print(self):
+        count=0
         temp=self.head
         while temp:
-            print(temp.data)
+            count+=1
             temp=temp.next
+            print(count)
 
 list=LinkedList()
 n1=Node(10)
