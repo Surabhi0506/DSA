@@ -19,9 +19,8 @@ class LinkedList:
         count=0
         temp=self.head
         while temp:
-            count+=1
+            print(temp.data)
             temp=temp.next
-            print(count)
 
 list=LinkedList()
 n1=Node(10)
@@ -32,3 +31,4 @@ list.append(n2)
 list.append(n3)
 list.append(Node(40))
 list.print()
+print(count(list))
