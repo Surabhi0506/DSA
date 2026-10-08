@@ -17,6 +17,7 @@ class LinkedList:
             while(temp.next):
                 temp=temp.next
             temp.next=new_node #apppending new node
+
     def insert(self, new_node,pos):   #insert node at first position 
         temp=self.head
         if pos==1:
@@ -31,6 +32,25 @@ class LinkedList:
             new_node.next=temp.next
             temp.next=new_node
             return
+
+    def del_node(self, value):
+        temp = self.head
+        #deleting first node
+        if temp.data==value: #searching value
+            self.head=self.head.next
+            return
+        while(temp):
+            if temp.data==value:
+                break
+            else:     #traversing
+                prev=temp
+                temp=temp.next
+            if temp==None:
+                print("Value is not there in the list")
+                return 
+            prev.next=temp.next
+            temp=None
+
     
     def print(self):
         temp=self.head
@@ -50,4 +70,6 @@ list.append(Node(40))
 list.insert(Node(100),1)
 list.print()
 list.insert(Node(130),4)
+list.print()
+list.del_node(100)
 list.print()
