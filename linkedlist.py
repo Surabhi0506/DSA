@@ -51,8 +51,19 @@ class LinkedList:
             prev.next=temp.next
             temp=None
 
+    def reverse(self):
+        curr=self.head
+        prev=None
+        while(curr):
+            nextnode=curr.next
+            curr.next=prev
+            prev=curr
+            curr=nextnode
+        self.head=prev
+
     
     def print(self):
+        print("List elements: ")
         temp=self.head
         print("Linked list data:")
         while temp:
@@ -72,4 +83,6 @@ list.print()
 list.insert(Node(130),4)
 list.print()
 list.del_node(100)
+list.print()
+list.reverse()
 list.print()
