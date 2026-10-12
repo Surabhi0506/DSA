@@ -31,15 +31,6 @@ class LinkedList:
             temp.next=new_node
             return
 
-    def middle(self):
-        slow = self.head
-        fast = self.head
-        while fast and fast.next:
-            slow=slow.next
-            fast=fast.next.next
-        if slow:
-            print("Middle node:",slow.data)
-
     def del_node(self,value):
         temp=self.head
         if temp.data==value:
@@ -67,14 +58,27 @@ class LinkedList:
             temp = next_node
         self.head = prev
 
-    def findmid_del(self):
-        temp=temp1=self.head
+    def mid_node(self):
+                temp=temp1=self.head
+                prev=None
+                while temp1 and temp1.next:
+                    prev=temp
+                    temp=temp.next
+                    temp1=temp1.next.next
+                print("Middle node:",temp.data)
+                prev.next=temp.next
+                temp=None
+
+    def delfirst_last(self):
+        temp1=self.head
+        temp1=None
         prev=None
-        while temp1 and temp1.next:
+        temp=self.head=self.head.next
+        while(temp.next):
             prev=temp
             temp=temp.next
-            temp1=temp1.next.next
-        print("Middle Node: ", temp.data)
+        prev.next=None
+        temp=None
 
     def sum(self):
         temp=self.head
@@ -101,16 +105,20 @@ list.append(n1)
 list.append(n2)
 list.append(n3)
 list.append(n4)
+list.print()
+print("List after insertion")
 list.insert(Node(100),3)
 list.insert(Node(70),4)
 list.print()
 print("Middle node:")
-list.middle()
-list.del_node(100)
-print("Linked list after deleting")
+list.mid_node()
+list.delfirst_last()
 list.print()
-print("Reversed list")
-list.reverse()
-list.print()
-print("Sum of consecutive pairs")
-list.sum()
+#list.del_node(100)
+#print("Linked list after deleting")
+#list.print()
+#print("Reversed list")
+#list.reverse()
+#list.print()
+#print("Sum of consecutive pairs")
+#list.sum()
