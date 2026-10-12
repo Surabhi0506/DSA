@@ -67,6 +67,15 @@ class LinkedList:
             temp = next_node
         self.head = prev
 
+    def findmid_del(self):
+        temp=temp1=self.head
+        prev=None
+        while temp1 and temp1.next:
+            prev=temp
+            temp=temp.next
+            temp1=temp1.next.next
+        print("Middle Node: ", temp.data)
+
     def sum(self):
         temp=self.head
         while temp and temp.next:
