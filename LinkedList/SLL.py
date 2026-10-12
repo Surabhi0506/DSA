@@ -80,6 +80,17 @@ class LinkedList:
         prev.next=None
         temp=None
 
+    def del_alternate(self):
+        prev=self.head
+        temp=self.head.next
+        while prev and temp:
+            prev.next=temp.next
+            temp=None #delete the node
+            prev=prev.next
+            if prev:
+                temp=prev.next
+                
+
     def sum(self):
         temp=self.head
         while temp and temp.next:
