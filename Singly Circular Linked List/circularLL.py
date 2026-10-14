@@ -10,11 +10,14 @@ class LinkedList:
     def append(self,new_node):
         if (self.head==None):
             self.head=new_node
+            new_node.next=self.head
         else:
             temp=self.head
-            while(temp.next):
+            while(temp.next != self.head):
                 temp=temp.next
             temp.next=new_node
+            new_node.next=self.head
+
 
     def insert(self,new_node,pos):
         temp=self.head
@@ -100,31 +103,32 @@ class LinkedList:
             temp=temp.next
 
     def print(self):
-        
-        temp=self.head
+        print()
         print("Linked list data")
-        while temp:
-            print(temp.data)
+        temp=self.head
+        while (True):
+            print(temp.data, end = " ")
             temp=temp.next
+            if temp == self.head:
+                break
 
 list=LinkedList()
 n1=Node(10)
 n2=Node(20)
 n3=Node(30)
-n4=Node(50)
 list.append(n1)
 list.append(n2)
 list.append(n3)
-list.append(n4)
+list.append(Node(40))
 list.print()
-print("List after insertion")
-list.insert(Node(100),3)
-list.insert(Node(70),4)
-list.print()
-print("Middle node:")
-list.mid_node()
-list.delfirst_last()
-list.print()
+#print("List after insertion")
+#list.insert(Node(100),3)
+#list.insert(Node(70),4)
+#list.print()
+#print("Middle node:")
+#list.mid_node()
+#list.delfirst_last()
+#list.print()
 #list.del_node(100)
 #print("Linked list after deleting")
 #list.print()
