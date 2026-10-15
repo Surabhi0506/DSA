@@ -22,11 +22,14 @@ class LinkedList:
         temp = self.head
         print("List elements: ")
         while temp:
-            print(temp.data, " ")
+            print(temp.data, end= " ")
             temp = temp.next 
 
 list = LinkedList()
 list.append(Node(12))
 list.append(Node(52))
 list.append(Node(22))
+list.append(Node(32))
+list.append(Node(45))
+list.append(Node(78))
 list.print()
