@@ -29,13 +29,13 @@ class BST:
                     else:
                         temp=temp.right
 
-def inorder(temp): #recursive
-    if temp is None:
-        return
-    else:
-        inorder(temp.left)
-        print(temp.data, end=" ")
-        inorder(temp.right)
+    def inorder(self,temp): #recursive
+        if temp is None:
+            return
+        else:
+            self.inorder(temp.left)
+            print(temp.data, end=" ")
+            self.inorder(temp.right)
 
 btree=BST()
 btree.insert(Node(10))
@@ -44,4 +44,4 @@ btree.insert(Node(2))
 btree.insert(Node(55))
 btree.insert(Node(12))
 btree.insert(Node(98))
-inorder(btree.root)
+btree.inorder(btree.root)
