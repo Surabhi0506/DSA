@@ -6,3 +6,9 @@ Basic Operations:
 1. enqueue(): insert(add) an item to the queue
 2. dequeue(): remove(access) an item from the queue
 3. front (first) and rear(last) pointers : new element is added to rear and element is removed from the front 
+
+Types of Queues:
+1. Linear queue
+2. Circular queue
+3. Priority queue
+4. Double ended queue(Dque)
